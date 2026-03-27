@@ -1,0 +1,55 @@
+# Environment variables with secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# State files (sensitive data)
+*_state.json
+*.state
+
+# Actual config files with secrets (use .example instead)
+allowed_users.txt
+unlimited_users.txt
+
+# Docker
+.dockerignore
+
+# Logs
+*.log

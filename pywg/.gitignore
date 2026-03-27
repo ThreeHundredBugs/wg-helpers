@@ -1,0 +1,16 @@
+# Environment variables with secrets
+.env
+.env.local
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Config files (use .example templates)
+allowed_users.txt
+unlimited_users.txt
+
+# Logs
+*.log

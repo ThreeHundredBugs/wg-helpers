@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  wg-bot:
+    build: .
+    container_name: wg-bot
+    restart: unless-stopped
+    # ВАЖНО: host сетевой режим даёт контейнеру доступ к localhost хоста (51821)
+    network_mode: "host"
+    environment:
+      # Лучше хранить BOT_TOKEN и WG_PASSWORD в .env
+      - BOT_TOKEN=${BOT_TOKEN}
+      - WG_API_BASE=${WG_API_BASE:-http://127.0.0.1:51821/api}
+      - WG_PASSWORD=${WG_PASSWORD}
+      - MAX_CONFIGS_PER_USER=${MAX_CONFIGS_PER_USER:-4}
+    # Монтируем папку с кодом/allowed_users, чтобы можно было редактировать без пересборки
+    volumes:
+      - ./bot_api.py:/app/bot_api.py:ro
+      - ./allowed_users.txt:/app/allowed_users.txt
+      - ./unlimited_users.txt:/app/unlimited_users.txt:ro
+      - ./requirements.txt:/app/requirements.txt:ro
+    working_dir: /app
+    # Запускаем скрипт непосредственно (можно также полагаться на CMD в Dockerfile)
+    command: ["python3", "bot_api.py"]
