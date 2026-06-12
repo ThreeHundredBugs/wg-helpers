@@ -1,3 +1,13 @@
+# ⚠️ Репозиторий устарел
+
+Данный репозиторий больше не поддерживается.
+
+Новая версия проекта находится здесь:
+
+➡️ [https://github.com/ThreeHundredBugs/new-repository-name](https://github.com/ThreeHundredBugs/CommonVpn)
+
+Все дальнейшие обновления публикуются только в новом репозитории.
+
 # WireGuard Helpers
 
 Набор утилит для управления WireGuard и отслеживания расходования трафика.
